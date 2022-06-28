@@ -90,7 +90,7 @@ int main(int argc, char** argv){
 	switch(opt){
 		case 0;
 		cout << "Fim do programa. Obrigado!" << endl;
-		free(senhasAtendidas);
+		freeFila(senhasAtendidas);
 		
 		break;
 		case 1;
