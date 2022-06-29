@@ -79,26 +79,31 @@ void freeFila(Fila *f) {
 
 int main(int argc, char** argv){
 	int opt, senha = 0, senhaexibida;
+	bool bin = false;
 	Fila *senhasGeradas;
 	senhasGeradas = init();
 	Fila *senhasAtendidas;
 	senhasAtendidas = init();
 	
 	cout << "0. Sair\n1. Gerar senha\n2. Realizar atendimento";
-	cin >> opt;
 	
-	switch(opt){
-		case 0;
+	
+	while(bin == false){
+			cout << count(senhasAtendidas)
+			cin >> opt;
+			switch(opt){
+		case 0:
 		cout << "Fim do programa. Obrigado!" << endl;
 		freeFila(senhasAtendidas);
+		bin = true;
 		
 		break;
-		case 1;
+		case 1:
 		incrementa(senha);
 		enqueue(senhasGeradas, senha);
 		
 		break;
-		case 2;
+		case 2:
 		senhaexibida = senhasGeradas->ini;
 		dequeue(senhasGeradas->ini);
 		cout << senhaexibida;
@@ -106,10 +111,11 @@ int main(int argc, char** argv){
 		if(isEmpty(senhasGeradas)==true){
 			count(senhasAtendidas);
 			opt = 0;
-		}
+		} 
 		
 		break;
 	}
-	
+	}
+
 	
 }
